@@ -24,8 +24,8 @@ export default function RepairsTable({ repairs }: RepairsTableProps) {
             <th className="px-4 py-3 text-left font-semibold text-slate-200">Technicien</th>
             <th className="px-4 py-3 text-left font-semibold text-slate-200">Client</th>
             <th className="px-4 py-3 text-left font-semibold text-slate-200">N° Machine</th>
-            <th className="px-4 py-3 text-left font-semibold text-slate-200">Pièces Changées</th>
-            <th className="px-4 py-3 text-left font-semibold text-slate-200">Durée</th>
+            <th className="px-4 py-3 text-left font-semibold text-slate-200">Nom Machine</th>
+            <th className="px-4 py-3 text-left font-semibold text-slate-200">Remarque</th>
             <th className="px-4 py-3 text-left font-semibold text-slate-200">Horaires</th>
           </tr>
         </thead>
@@ -36,6 +36,8 @@ export default function RepairsTable({ repairs }: RepairsTableProps) {
               <td className="px-4 py-3 text-slate-300">{repair.technicianName}</td>
               <td className="px-4 py-3 text-slate-300">{repair.customerName}</td>
               <td className="px-4 py-3 text-slate-300">{repair.machineNumber}</td>
+              <td className="px-4 py-3 text-slate-300">{repair.machineName}</td>
+              {/*
               <td className="px-4 py-3 text-slate-300">
                 <div className="flex flex-wrap gap-1">
                   {repair.partsChanged.length > 0 ? (
@@ -48,8 +50,8 @@ export default function RepairsTable({ repairs }: RepairsTableProps) {
                     <span className="text-slate-500">-</span>
                   )}
                 </div>
-              </td>
-              <td className="px-4 py-3 text-slate-300">{repair.duration}</td>
+              </td>*/}
+              <td className="px-4 py-3 text-slate-300">{repair.remarks}</td>
               <td className="px-4 py-3 text-slate-300">
                 {repair.startTime} - {repair.endTime}
               </td>
