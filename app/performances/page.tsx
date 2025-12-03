@@ -122,13 +122,12 @@ export default function PerformancesPage() {
       r.customerName,
       r.machineNumber,
       r.machineName,
-      r.partsChanged.join(", "),
       r.remarks,
       `${r.startTime} - ${r.endTime}`,
     ])
 
     autoTable(doc, {
-      head: [["Date", "Technicien", "Client", "N° Machine", "Pièces", "Remarques", "Horaires"]],
+      head: [["Date", "Technicien", "Client", "N° Machine", "NomMachine", "Remarques", "Horaires"]],
       body: tableData,
       startY: 30,
       theme: "grid",
