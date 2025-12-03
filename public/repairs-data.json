@@ -1,0 +1,30 @@
+{
+  "repairs": [
+    {
+      "id": "1",
+      "technicianName": "Jean Dupont",
+      "machineNumber": "M-001",
+      "customerName": "Acme Corp",
+      "remarks": "Réparation du moteur",
+      "partsChanged": ["Courroie", "Filtre"],
+      "partsNeeded": ["Vis M8", "Joint"],
+      "startTime": "09:00",
+      "endTime": "11:30",
+      "date": "2024-12-01",
+      "duration": "2h 30m"
+    },
+    {
+      "id": "2",
+      "technicianName": "Marie Martin",
+      "machineNumber": "M-002",
+      "customerName": "Tech Solutions",
+      "remarks": "Remplacement hydraulique",
+      "partsChanged": ["Pompe hydraulique"],
+      "partsNeeded": ["Huile hydraulique"],
+      "startTime": "10:00",
+      "endTime": "13:00",
+      "date": "2024-12-01",
+      "duration": "3h"
+    }
+  ]
+}
