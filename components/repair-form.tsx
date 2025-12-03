@@ -60,7 +60,7 @@ export default function RepairForm() {
       duration: calculateDuration(formData.startTime, formData.endTime),
     }
 
- await fetch("http://localhost:5000/api/repairs", {
+ await fetch("https://repair-api-4.onrender.com/api/repairs", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(repair),
