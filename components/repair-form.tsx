@@ -1,6 +1,6 @@
 "use client"
 import type React from "react"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import type { Repair } from "@/types/repair"
@@ -99,7 +99,15 @@ export default function RepairForm() {
       [field]: [...formData[field], ""],
     })
   }
+useEffect(() => {
+  if (submitted) {
+    const timer = setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
 
+    return () => clearTimeout(timer);
+  }
+}, [submitted]);
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
