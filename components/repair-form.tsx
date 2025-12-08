@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import type { Repair } from "@/types/repair"
 
 export default function RepairForm() {
+    const today = new Date().toISOString().split("T")[0]
   const [formData, setFormData] = useState({
     technicianName: "",
     machineNumber: "",
@@ -16,11 +17,12 @@ export default function RepairForm() {
     partsNeeded: [""],
     startTime: "",
     endTime: "",
+    date: today,  
   })
 
   const [submitted, setSubmitted] = useState(false)
 
-  const today = new Date().toISOString().split("T")[0]
+
 
   const calculateDuration = (start: string, end: string): string => {
     if (!start || !end) return ""
@@ -54,7 +56,7 @@ export default function RepairForm() {
       partsNeeded: formData.partsNeeded.filter((p) => p.trim() !== ""),
       startTime: formData.startTime,
       endTime: formData.endTime,
-      date: today,
+        date: formData.date,
       duration: calculateDuration(formData.startTime, formData.endTime),
     }
 
@@ -79,6 +81,7 @@ export default function RepairForm() {
       partsNeeded: [""],
       startTime: "",
       endTime: "",
+      date:"",
     })
 
     setTimeout(() => setSubmitted(false), 3000)
@@ -151,8 +154,12 @@ export default function RepairForm() {
 
         <div>
           <label className="block text-sm font-medium text-slate-200 mb-2">Date (automatique)</label>
-          <Input type="date"  value={today} disabled className="bg-slate-700 border-slate-600 text-slate-300" />
-        </div>
+ <Input
+    type="date"
+    value={formData.date}
+    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+    className="bg-slate-700 border-slate-600 text-slate-300"
+  />        </div>
       </div>
 
       <div>
