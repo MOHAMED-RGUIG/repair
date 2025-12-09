@@ -58,7 +58,7 @@ const currentRepairs = filteredRepairs.slice(indexOfFirst, indexOfLast);
 const totalPages = Math.ceil(filteredRepairs.length / repairsPerPage);
 
  useEffect(() => {
-  fetch("https://repair-api-4.onrender.com/api/repairs")
+  fetch("192.168.10.95:5000/api/repairs")
     .then(res => res.json())
     .then(data => {
       setRepairs(data);
